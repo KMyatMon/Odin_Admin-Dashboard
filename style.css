@@ -1,0 +1,366 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --txt-clr: black;
+  --bg-clr-prm: #fff;
+  --bg-clr-sec: #e2e8f0;
+  --sdbr-bg-clr: #1992d4;
+  --sdbr-txt-clr: white;
+  --btn-txt-clr: white;
+  --btn-bg-clr: #1992d4;
+  --card-lft-brdr: #f0b429;
+  --sdbr-svg-fill: white;
+  --main-svg-fill: black;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--txt-clr);
+  background-color: var(--bg-clr-prm);
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/*
+body > div {
+  width: 100%;
+  height: 100%;
+}
+*/
+/* ==================================================== */
+
+.sidebar {
+  background-color: var(--sdbr-bg-clr);
+  padding: 1em;
+  color: var(--sdbr-txt-clr);
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-logo > svg {
+  max-height: 50px;
+  width: 50px;
+  flex: 1;
+  fill: var(--sdbr-svg-fill);
+}
+
+.sidebar-logo > p {
+  flex: 3;
+  font-size: 1.5rem;
+  margin-left: 0.5em;
+  font-weight: bold;
+}
+
+.sidebar .lists {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2em;
+}
+
+.sidebar > .lists > ul {
+  margin-top: 2.5em;
+}
+
+.sidebar > .lists > ul > li {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  cursor: pointer;
+}
+
+.sidebar .lists > ul > li > svg {
+  max-height: 25px;
+  fill: var(--sdbr-svg-fill);
+}
+
+.sidebar .lists > ul > li > span {
+  font-weight: 500;
+}
+
+.sidebar .lists > ul > li + li {
+  margin-top: 1.3em;
+}
+
+/*  =============================================  */
+
+.main {
+  display: grid;
+  grid-template-rows: 20% 80%;
+}
+
+/*.main > div {
+  position: absolute;
+}
+*//*  =============================================  */
+
+.header {
+  width: 100%;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 20px;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  box-shadow: 0px 5px 2px 1px lightgrey;
+}
+.header svg {
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+}
+.header .search {
+  display: flex;
+  float: left;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.header input {
+  min-width: 200px;
+  width: auto;
+  border-radius: 1em;
+  border: none;
+  background-color: var(--bg-clr-sec);
+  padding: 0.5em;
+}
+
+.header .status {
+  display: flex;
+  float: right;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  margin-right: 40px;
+}
+.header .user-logo-small {
+  width: 30px;
+  height: 30px;
+  margin: 0px 10px;
+  border-radius: 50px;
+  border: 1px solid #000;
+}
+
+.header .welcome {
+  display: flex;
+  float: left;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 30px 10px;
+}
+.header .user-logo-big {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  border-radius: 50px;
+  border: 3px solid #000;
+}
+.welcome > div > span {
+  font-size: 0.75rem;
+  margin: 0;
+}
+.welcome > div > h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.header .header-buttons {
+  display: flex;
+  float: right;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 30px;
+}
+.header .header-buttons button {
+  border: none;
+  margin: 5px;
+  border-radius: 1.5em;
+  background-color: var(--btn-bg-clr);
+  color: var(--btn-txt-clr);
+  padding: 0.75em 2em;
+  cursor: pointer;
+}
+/*  =============================================  */
+
+.main-content {
+  background-color: var(--bg-clr-sec);
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  align-items: start;
+  align-content: start;
+}
+
+.projects {
+  grid-row: span 2;
+  padding: 1em;
+}
+
+.projects > .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1em;
+}
+
+.projects > h2,
+.announcements > h2,
+.trending > h2 {
+  font-size: 1.125rem;
+}
+
+.card {
+  background-color: var(--bg-clr-prm);
+  border-radius: 8px;
+  border-left: 5px solid var(--card-lft-brdr);
+  padding: 1.5em 1em;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card__heading {
+  font-weight: bold;
+  margin: 0;
+}
+
+.card__desc {
+  opacity: 0.9;
+  margin: 0;
+}
+
+.card__icons {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 1.5em;
+  justify-self: flex-end;
+  height: 100%;
+  padding: 1em;
+}
+
+.card__icons > svg {
+  max-width: 25px;
+  cursor: pointer;
+  opacity: 0.9;
+  fill: var(--main-svg-fill);
+}
+
+.announcements,
+.trending {
+  padding: 1em 1em 1em 0.1em;
+}
+
+.announcements > ul,
+.trending > ul {
+  background-color: var(--bg-clr-prm);
+  padding: 1em 1.5em;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+.announcements > ul > li {
+  padding: 0.5em;
+}
+
+.announcements > ul > li > h4 {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.announcements > ul > li > p {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.announcements > ul > li + li {
+  border-top: 1px solid var(--txt-clr);
+}
+
+.trending {
+  grid-column: 2;
+  margin-top: 0;
+}
+
+.trending > ul > li + li {
+  margin-top: 1em;
+}
+
+.trending > ul > li {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.trending > ul > li > img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.trending > ul > li > div > * {
+  margin: 0;
+}
+
+.trending > ul > li > div > p:first-child {
+  font-weight: 500;
+}
+
+.trending > ul > li > div > p:nth-child(2) {
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+
+/*===================================================*/
+
+
+@media (max-width: 768px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  body > .sidebar {
+    display: none;
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .header > .status {
+    display: none;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .announcements,
+  .trending {
+    margin: 1em;
+  }
+}
